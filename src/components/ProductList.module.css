@@ -1,0 +1,19 @@
+.list
+{
+    margin: 2rem auto;
+padding: 1rem;
+width: 90%;
+max-width: 40rem;
+}
+li{
+    list-style: none;
+    
+}
+.listData{
+    border-bottom: 1px solid #ccc;
+    padding: 1rem;
+}
+
+label{
+    font-weight: bold;
+}

@@ -1,0 +1,20 @@
+.cart{
+    margin-left: auto;
+    padding: 1rem;
+    width: 90%;
+    max-width: 20rem;
+    margin-top: 1rem;
+}
+.cartList{
+    border-bottom: 1px solid #ccc;
+    padding: 1rem;
+}
+.cartHeading{
+    text-align: center;
+}
+.gTotal{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: green;
+}

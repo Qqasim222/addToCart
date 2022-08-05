@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment, useState} from "react";
+import ProductForm from './components/ProductForm';
+import ProductList from "./components/ProductList";
+import Header from "./components/Headers/Header";
+import Cart from "./components/Cart/Cart";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+    const[productList, setProductList] = useState([]);
+
+    const onAddProduct = (pName, priceT, quant) => {
+        setProductList((prevProductList) => {
+            return [...prevProductList,
+                 {
+                     name:pName,
+                     price: priceT,
+                    quantity: quant,
+                    totalPrice: priceT,
+                    id: Math.random().toString()}]
+
+        })
+    }
+
+    return(
+       <Fragment>
+       <Header/>
+       <Cart/>
+      <ProductForm onAddProduct={onAddProduct}/>
+      <ProductList users={productList}/>
+       </Fragment>
+    )
 }
 
 export default App;
